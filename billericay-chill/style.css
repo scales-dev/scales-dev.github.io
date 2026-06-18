@@ -111,8 +111,11 @@ html, body {
     color: inherit;
     text-decoration: none;
 }
+.footer-right {
+    text-align: right;
+}
 
-@media (max-width: 1000px) {
+@media (max-width: 480px) {
     .footer {
         flex-direction: column;
         gap: 20px;

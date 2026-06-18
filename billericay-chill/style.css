@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#navbar {
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+
+    background-color: #000000;
+}
+#navbar a {
+    float: right;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none; /* Removes underline, fancy */
+}
+#navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#title-section {
+
+    background-image: url("images/ice.png");
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.title-box * {
+    text-align: center;
+}
+
+.title-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: min(466px, 55vw);
+    height: auto;
+
+    padding: 27px;
+    box-sizing: border-box;
+
+    /* rounded + blur + shadow = modern ui!!! this site is so modern and slick!!! */
+    border-radius: 20px;
+    background: rgba(22, 22, 22, 0.3);
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 67px rgba(11, 11, 11, 0.8);
+
+    gap: 13px;
+}
+
+.logo {
+    position: relative;
+    width: 106px;
+    height: 106px;
+    border-radius: 10%;
+}
+
+.title {
+    position: relative;
+    font-size: min(60px, 10vw);
+    font-family: "DejaVu Serif", "Times New Roman", serif;
+    margin: 0;
+    color: #2fc9d0;
+
+    wrap-option: inherit;
+}
+
+.subtitle {
+    position: relative;
+    font-size: 19px;
+    width: 100%;
+    margin: 0;
+}
+
+.ice-text {
+    color: #037177;
+}
+
+.banner {
+    width: 100%;
+    background: #000000;
+    color: white;
+    display: flex;
+    text-align: center;
+    padding: 10px 0;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.banner-item {
+    flex: 1;
+    padding: 12px 0;
+    font-size: 14px;
+    border-right: 1px solid rgba(127, 252, 255, 0.2);
+}

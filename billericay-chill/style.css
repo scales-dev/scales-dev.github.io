@@ -20,7 +20,6 @@ html, body {
 
 #navbar {
     width: 100%;
-    overflow: hidden;
     position: fixed;
 }
 #navbar a {
@@ -49,7 +48,7 @@ html, body {
     flex-direction: column;
     align-items: center;
 
-    width: min(466px, 55vw);
+    width: min(466px, 70vw);
     height: auto;
 
     padding: 27px;
@@ -63,7 +62,7 @@ html, body {
 .title {
     text-shadow: 5px 5px 4px #000000;
     position: relative;
-    font-size: min(max(5vh, 60px), 8vw);
+    font-size: min(max(8vh, 60px), 8vw);
     font-family: "DejaVu Serif", "Times New Roman", serif;
     margin: 0;
     color: #7ffcff;

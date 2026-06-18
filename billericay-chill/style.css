@@ -1,7 +1,6 @@
 html, body {
     margin: 0;
-    height: 100%;
-    overflow: hidden; /* disables scrolling */
+    height: 100vh;
     background: linear-gradient(
             135deg,
             hsl(180, 60%, 80%) 0%,
@@ -37,18 +36,6 @@ html, body {
     color: black;
 }
 
-
-#grid-container {
-    display: grid;
-    grid-template-columns: repeat(50, 1fr);
-    grid-template-rows: repeat(50, 1fr);
-    position: fixed;
-    width: max(100vw, 100vh);
-    height: max(100vw, 100vh);
-    inset: 0;
-    margin: 0;
-}
-
 .title-box * {
     text-align: center;
 }
@@ -73,17 +60,10 @@ html, body {
     gap: 13px;
 }
 
-.logo {
-    position: relative;
-    width: 106px;
-    height: 106px;
-    border-radius: 10%;
-}
-
 .title {
     text-shadow: 5px 5px 4px #000000;
     position: relative;
-    font-size: min(60px, 8vw);
+    font-size: min(max(5vh, 60px), 8vw);
     font-family: "DejaVu Serif", "Times New Roman", serif;
     margin: 0;
     color: #7ffcff;
@@ -118,10 +98,6 @@ html, body {
     padding: 20px 40px;
     box-sizing: border-box;
 }
-.footer-left,
-.footer-right {
-    width: 45%;
-}
 
 .footer h3 {
     margin: 0;
@@ -136,7 +112,7 @@ html, body {
     text-decoration: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
     .footer {
         flex-direction: column;
         gap: 20px;

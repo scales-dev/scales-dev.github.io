@@ -296,70 +296,6 @@ html, body {
 }
 
 /* ============================================
-   Map & Location
-   ============================================ */
-
-.map-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 900px;
-    height: 450px;
-    margin: 40px auto;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-}
-
-.map-frame {
-    width: 100%;
-    height: 100%;
-    border: 0;
-}
-
-.radius-glow {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 320px;
-    height: 320px;
-    border-radius: 50%;
-    background: radial-gradient(
-            circle,
-            rgba(127, 252, 255, 0.25) 0%,
-            rgba(127, 252, 255, 0.10) 40%,
-            rgba(127, 252, 255, 0.00) 70%
-    );
-    border: 2px solid rgba(127, 252, 255, 0.5);
-    box-shadow:
-            0 0 25px rgba(127, 252, 255, 0.6),
-            inset 0 0 40px rgba(127, 252, 255, 0.2);
-    pointer-events: none;
-}
-
-.map-label {
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(10px);
-    padding: 10px 14px;
-    border-radius: 12px;
-    color: white;
-}
-
-.map-label h3 {
-    margin: 0;
-    font-size: 14px;
-}
-
-.map-label p {
-    margin: 4px 0 0;
-    font-size: 12px;
-    opacity: 0.8;
-}
-
-/* ============================================
    Postcode Box
    ============================================ */
 
@@ -402,6 +338,150 @@ html, body {
 #result {
     margin-top: 12px;
     font-weight: bold;
+}
+
+/* ========================
+   Contact Page
+   ======================== */
+
+.contact-page{
+
+    width:min(1100px,90vw);
+
+    margin:110px auto 60px;
+
+    text-align:center;
+
+    flex:1;
+}
+
+.contact-grid{
+
+    display:flex;
+
+    gap:24px;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+}
+
+.contact-card{
+
+    flex:1 1 420px;
+
+    max-width:520px;
+
+    padding:28px;
+
+    border-radius:16px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:white;
+
+    text-align:left;
+}
+
+.contact-card h2{
+
+    margin-top:0;
+}
+
+.contact-item{
+
+    margin:20px 0;
+
+    line-height:1.6;
+}
+
+
+/* Form */
+
+.contact-card form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+}
+
+.contact-card input,
+
+.contact-card textarea{
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:14px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.12);
+}
+
+.contact-card textarea{
+
+    resize:vertical;
+}
+
+.contact-card input::placeholder,
+
+.contact-card textarea::placeholder{
+
+    color:rgba(255,255,255,.6);
+}
+
+.contact-map{
+
+    margin-top:24px;
+
+    width:100%;
+
+    height:320px;
+
+    border-radius:16px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.contact-map iframe{
+
+    width:100%;
+
+    height:100%;
+
+    border:0;
+}
+
+/* Mobile */
+
+@media (max-width:900px){
+
+    .contact-grid{
+
+        flex-direction:column;
+
+        align-items:center;
+    }
 }
 
 /* ============================================

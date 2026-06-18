@@ -1,6 +1,16 @@
+/*
+this css is a MESS, but it was even WORSE before i asked ai "clean up the style.css to remove unused tags and organise it" doom.
+ */
+
+/* ============================================
+   Base Styles
+   ============================================ */
+
 html, body {
     margin: 0;
-    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: linear-gradient(
             135deg,
             hsl(180, 60%, 80%) 0%,
@@ -11,33 +21,38 @@ html, body {
     );
 }
 
-#navbar, .title-box, .footer {
-    /* blur + shadow = modern ui!!! this site is so modern and slick!!! */
+/* ============================================
+   Navbar
+   ============================================ */
+
+#navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
     background: rgba(22, 22, 22, 0.3);
     backdrop-filter: blur(1vw);
     box-shadow: 0 0 67px rgba(11, 11, 11, 0.8);
 }
 
-#navbar {
-    width: 100%;
-    position: fixed;
-}
 #navbar a {
     float: right;
     display: block;
     color: #f2f2f2;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none; /* Removes underline, fancy */
+    text-decoration: none;
     font-size: 3vh;
 }
+
 #navbar a:hover {
     color: black;
 }
 
-.title-box * {
-    text-align: center;
-}
+/* ============================================
+   Title Box & Hero
+   ============================================ */
 
 .title-box {
     position: absolute;
@@ -47,16 +62,19 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-
     width: min(466px, 70vw);
     height: auto;
-
     padding: 27px;
     box-sizing: border-box;
-
     border-radius: 20px;
-
     gap: 13px;
+    background: rgba(22, 22, 22, 0.3);
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 67px rgba(11, 11, 11, 0.8);
+}
+
+.title-box * {
+    text-align: center;
 }
 
 .title {
@@ -66,8 +84,6 @@ html, body {
     font-family: "DejaVu Serif", "Times New Roman", serif;
     margin: 0;
     color: #7ffcff;
-
-    wrap-option: inherit;
 }
 
 .subtitle {
@@ -81,21 +97,347 @@ html, body {
     color: #7ffcff;
 }
 
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+/* ============================================
+   Home Page
+   ============================================ */
 
+.home-page {
+    width: min(1100px, 90vw);
+    margin: 120px auto 60px;
+    flex: 1;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    font-size: clamp(60px, 8vw, 90px);
+    margin: 0;
+    color: #7ffcff;
+    text-shadow: 0 0 30px rgba(127, 252, 255, 0.4);
+}
+
+.hero-subtitle {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 22px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============================================
+   Call-to-Action Buttons
+   ============================================ */
+
+.cta-row {
+    display: flex;
+    gap: 16px;
+    margin-top: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    padding: 12px 18px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.cta-button.primary {
+    background: #7ffcff;
+    color: black;
+    border: none;
+    box-shadow: 0 0 25px rgba(127, 252, 255, 0.3);
+}
+
+.cta-button.primary:hover {
+    background: #a7fdff;
+    box-shadow: 0 0 35px rgba(127, 252, 255, 0.5);
+}
+
+/* ============================================
+   Pricing Page
+   ============================================ */
+
+.pricing-page {
+    width: min(1100px, 90vw);
+    margin: 110px auto 60px auto;
+    text-align: center;
+}
+
+.pricing-title {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.pricing-subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: 40px;
+}
+
+.pricing-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.pricing-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.pricing-card {
+    flex: 1 1 280px;
+    max-width: 320px;
+    padding: 10px 28px 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: white;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.badge {
+    display: inline-block;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #7ffcff;
+    color: black;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    margin: 10px 0 20px 0;
+}
+
+.price span {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.pricing-card li {
+    margin: 8px 0;
+    opacity: 0.85;
+}
+
+.pricing-button {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.2s ease;
+}
+
+.pricing-button:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* ============================================
+   Feature Grid
+   ============================================ */
+
+.feature-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.feature-grid .pricing-card {
+    flex: 1 1 280px;
+    max-width: 320px;
+    text-align: center;
+}
+
+/* ============================================
+   Map & Location
+   ============================================ */
+
+.map-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+    margin: 40px auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.map-frame {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.radius-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(
+            circle,
+            rgba(127, 252, 255, 0.25) 0%,
+            rgba(127, 252, 255, 0.10) 40%,
+            rgba(127, 252, 255, 0.00) 70%
+    );
+    border: 2px solid rgba(127, 252, 255, 0.5);
+    box-shadow:
+            0 0 25px rgba(127, 252, 255, 0.6),
+            inset 0 0 40px rgba(127, 252, 255, 0.2);
+    pointer-events: none;
+}
+
+.map-label {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: white;
+}
+
+.map-label h3 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.map-label p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* ============================================
+   Postcode Box
+   ============================================ */
+
+.postcode-box {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(22, 22, 22, 0.3);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+.postcode-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.postcode-input input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+
+.postcode-input button {
+    padding: 10px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background: #7ffcff;
+    color: black;
+    font-weight: bold;
+}
+
+#result {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+/* ============================================
+   Responsive Design
+   ============================================ */
+
+@media (max-width: 480px) {
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-left,
+    .footer-right {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+.footer {
+    margin-top: auto;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-
     color: white;
     text-shadow: 0 0 5px #000000;
-
     padding: 20px 40px;
     box-sizing: border-box;
+    background: rgba(22, 22, 22, 0.3);
+    backdrop-filter: blur(1vw);
+    box-shadow: 0 0 67px rgba(11, 11, 11, 0.8);
 }
 
 .footer h3 {
@@ -109,20 +451,4 @@ html, body {
     opacity: 0.85;
     color: inherit;
     text-decoration: none;
-}
-.footer-right {
-    text-align: right;
-}
-
-@media (max-width: 480px) {
-    .footer {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .footer-left,
-    .footer-right {
-        width: 100%;
-        text-align: center;
-    }
 }

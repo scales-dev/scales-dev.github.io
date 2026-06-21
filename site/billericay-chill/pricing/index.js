@@ -39,17 +39,19 @@ async function checkPostcode() {
     try {
         // thank goodness there is an API that doesnt require a key for this https://postcodes.io/endpoints/
         // my sister said it doesnt rate limit, i hope that's true
-        const res = await fetch(`https://api.postcodes.io/${encodeURIComponent(postcode)}`);
+        const res = await fetch(`https://api.postcodes.io/postcodes/${encodeURIComponent(postcode)}`);
 
         const data = await res.json();
+
+        console.log(data);
 
         if (data.status !== 200) {
             result.innerText = "Postcode not found.";
             return;
         }
 
-        const POSTCODE_LONGITUDE = parseFloat(data[0].longitude);
-        const POSTCODE_LATITUDE = parseFloat(data[0].latitude);
+        const POSTCODE_LONGITUDE = parseFloat(data.result.longitude);
+        const POSTCODE_LATITUDE = parseFloat(data.result.latitude);
 
         const distance = haversineDistance(BILLERICAY_CHILL_LONGITUDE, BILLERICAY_CHILL_LATITUDE, POSTCODE_LONGITUDE, POSTCODE_LATITUDE);
 
@@ -62,6 +64,7 @@ async function checkPostcode() {
         }
 
     } catch (err) {
+        console.error(err);
         result.innerText = "Error checking postcode.";
     }
 }

@@ -15,12 +15,16 @@
     <link rel="stylesheet" href="../style/header.css">
     <link rel="stylesheet" href="../style/footer.css">
 
+    <link rel="stylesheet" href="../style/title.css">
+    <link rel="stylesheet" href="../style/button.css">
+    <link rel="stylesheet" href="../style/card-grid.css">
+
     <script src="index.js"></script>
 </head>
 <body>
 
 <header>
-    <a href = "" class="logo">
+    <a href = "../" class="logo">
         <img src="../images/logo.png" alt="logo">
         <p class= "billericay-logo-text">Billericay <br><b class = "chill-logo-text">Chill</b></p>
     </a>
@@ -33,63 +37,74 @@
     </div>
 </header>
 
-<div class="pricing-page">
-
-    <h1 class="pricing-title">Pricing</h1>
-    <p class="pricing-subtitle">Contact us to purchase, for larger orders prices are negotiable. Collection is free but must be organised in advance</p>
-
-    <div class="pricing-grid">
-
-        <div class="pricing-card">
-            <h2>12kg Ice Bags</h2>
-            <p class="price">From £11.95 <span>/ bag</span></p>
-            <ul>
-                <li>£11.95/bag when buying 50+</li>
-                <li>£14/bag when buying 25+</li>
-                <li>£16/bag otherwise</li>
-            </ul>
+<main>
+    <section class="grid-section">
+        <div class="centered-title">
+            <h1>Pricing</h1>
+            <h2>Dirt Cheap Prices For Crystal Clear Ice</h2>
         </div>
 
-        <div class="pricing-card">
-            <h2>Storage</h2>
-            <p class="price">From £4 <span>/ day</span></p>
-            <ul>
-                <li>£16/day short term</li>
-                <li>£4/day short term</li>
-            </ul>
-        </div>
-
-        <div class="pricing-card">
-            <h2>Delivery</h2>
-            <p class="price">From £25</p>
-            <h4 class="price-subheading">Within 6 miles</h4>
-            <ul>
-                <li>£25 for locals on weekdays</li>
-                <li>£50 for locals on weekends</li>
-            </ul>
-
-            <h4 class="price-subheading">Outside 6 miles</h4>
-            <ul>
-                <li>Starting from £50, contact us for a quote</li>
-            </ul>
-
-
-            <h3>Check Distance</h3>
-
-            <div class="postcode-input">
-                <label for="postcode"></label><input id="postcode" type="text" placeholder="Enter postcode (e.g. CM4 9RH)">
-                <button onclick="checkPostcode()">Check</button>
+        <section class="grid">
+            <div class="card">
+                <div class="card-text">
+                    <h1>12kg Ice Bags</h1>
+                    <h2>From £11.95 <span>/ bag</span></h2>
+                    <ul>
+                        <li>£11.95/bag when buying 50+</li>
+                        <li>£14/bag when buying 25+</li>
+                        <li>£16/bag otherwise</li>
+                    </ul>
+                </div>
             </div>
 
-            <p id="result"></p>
+            <div class="card">
+                <div class="card-text">
+                    <h1>Storage</h1>
+                    <h2>From £4 <span>/ day</span></h2>
+                    <ul>
+                        <li>£16/day short term</li>
+                        <li>£4/day short term</li>
+                    </ul>
+                </div>
+            </div>
 
+            <div class="card">
+                <div class="card-text">
+                    <h1>Delivery</h1>
+                    <h3 class="price-subheading">Within 6 miles</h3>
+                    <ul>
+                        <li>£25 for locals on weekdays</li>
+                        <li>£50 for locals on weekends</li>
+                    </ul>
+
+                    <h3 class="price-subheading">Outside 6 miles</h3>
+                    <ul>
+                        <li>Starting from £50, contact us for a quote</li>
+                    </ul>
+
+
+                    <h3>Check Distance</h3>
+
+                    <div class="postcode-input">
+                        <label for="postcode"></label><input id="postcode" type="text" placeholder="Enter postcode (e.g. CM4 9RH)">
+                        <button onclick="checkPostcode()">Check</button>
+                    </div>
+
+                    <p id="result"></p>
+                </div>
+            </div>
+        </section>
+
+        <div class = "buttons">
+            <div class = "centered-buttons">
+                <a href="../contact" id="main-button">Contact Us</a>
+                <a href="../">Home Page</a>
+            </div>
         </div>
-    </div>
 
-    <div class="pricing-cta">
-        <a href="../contact/index.html" class="cta-button primary">Contact Us</a>
-    </div>
-</div>
+        <p>Contact us to purchase. For larger orders prices are negotiable. Collection is free but must be organised in advance</p>
+    </section>
+</main>
 
 <footer>
     <div class = "footer-info">

@@ -11,6 +11,7 @@
 }
 @media (max-width: 1000px) {
     .title {
+        padding-top: 0;
         background-position: 60% 30vh;
         padding-bottom: 30vh;
     }
@@ -30,7 +31,9 @@
     margin: 0 0 3vh 0;
     line-height: 0.9;
 }
-
+#cool-title-text {
+    color: #00b4f6;
+}
 .title p {
     font-size: 2.5vh;
     width: min(50vh, 80vw);

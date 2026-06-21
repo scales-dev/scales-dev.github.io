@@ -1,3 +1,4 @@
+<!-- todo: looks bad, and messy code -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,6 +19,42 @@
     <link rel="stylesheet" href="../style/title.css">
     <link rel="stylesheet" href="../style/button.css">
     <link rel="stylesheet" href="../style/card-grid.css">
+
+    <style>
+        .contact-map{
+            margin-top:24px;
+            width:100%;
+            height:320px;
+            border-radius:16px;
+            overflow:hidden;
+            box-shadow:0 20px 40px rgba(0,0,0,.25);
+        }
+        .contact-map iframe{
+            width:100%;
+            height:100%;
+            border:0;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, max-content);
+
+            justify-content: center;
+            gap: 4vw;
+
+            padding: 0 5vw;
+        }
+
+    </style>
+
+    <script>
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+
+            navigator.clipboard.writeText(text).then(() => {
+                alert("Copied: " + text + " to clipboard");
+            });
+        }
+    </script>
 </head>
 
 <body>
@@ -39,61 +76,44 @@
 <main>
     <section class="grid-section">
         <div class="centered-title">
-            <h1>Pricing</h1>
-            <h2>Dirt Cheap Prices For Crystal Clear Ice</h2>
+            <h1>Contact Us</h1>
+            <h2>Contact us to arrange the buying of ice, a delivery or a pickup</h2>
         </div>
 
         <section class="grid">
             <div class="card">
-                <h1>Billericay Chill</h1>
-                <ul>
-                    <li>+44 07889 740335</li>
-                    <li>illericaychillstorageandice@gmail.com</li>
-                    <li>Unit 4e Oaklands Farm Est CM4 9RH</li>
-                </ul>
+                <div class="card-text">
+                    <h1>Contact Information</h1>
+                    <h2>
+                        📞 +44 <a id="phone-number">07889 740335</a>
+                        <button onclick="copyText('phone-number')">Copy</button>
+                    </h2>
 
-                <div class="contact-map">
-                    <iframe
-                            src="https://www.google.com/maps?q=Unit+4e+Oaklands+Farm+Est+CM4+9RH,+Goatsmoor+Ln,+Stock,+Ingatestone&output=embed"
-                            allowfullscreen
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                    <h2>
+                        ✉️ <a id="email">billericaychillstorageandice@gmail.com</a>
+                        <button onclick="copyText('email')">Copy</button>
+                    </h2>
+
+                    <h2>📍 Unit 4e Oaklands Farm Est CM4 9RH</h2>
+
+                    <div class="contact-map">
+                        <iframe
+                                src="https://www.google.com/maps?q=Unit+4e+Oaklands+Farm+Est+CM4+9RH,+Goatsmoor+Ln,+Stock,+Ingatestone&output=embed"
+                                allowfullscreen
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="card">
-                <h2>Email us</h2>
-
-                <form action="mailto:billericaychillstorageandice@gmail.com" method="post" enctype="text/plain">
-                    <label>
-                        <input type="text" name="name" placeholder="Your name" required>
-                    </label>
-                    <label>
-                        <input type="email" name="email" placeholder="Your email" required>
-                    </label>
-                    <label>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                    </label>
-                    <label>
-                        <textarea name="message" rows="6" placeholder="How can we help?" required></textarea>
-                    </label>
-                    <button type="submit" class="cta-button primary">Send Message</button>
-
-                </form>
-
             </div>
         </section>
 
         <div class = "buttons">
             <div class = "centered-buttons">
-                <a href="../contact" id="main-button">Contact Us</a>
+                <a href="../pricing" id="main-button">View Prices</a>
                 <a href="../">Home Page</a>
             </div>
         </div>
-
-        <p>Contact us to purchase. For larger orders prices are negotiable. Collection is free but must be organised in advance</p>
     </section>
 </main>
 

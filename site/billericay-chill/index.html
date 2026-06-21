@@ -1,114 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- todo: add icon and embed -->
     <meta charset="UTF-8">
     <title>Billericay Chill - Premium Ice & Frozen Storage, Essex</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+<!-- i learnt today that :header, main and footer are default html tags, i think thats swag for keeping clean code-->
+<header>
+    <a href = "" class="logo">
+        <img src="images/logo.png" alt="logo">
+        <p class= "billericay-logo-text">Billericay <br><b class = "chill-logo-text">Chill</b></p>
+    </a>
 
-<div class="box">
-    <div id = "navbar">
-        <a href = "contact/index.html">Contact</a>
-        <a href = "pricing/index.html">Pricing</a>
-        <a href = "index.html">Home</a>
+    <!-- div is supposedly magical and allows the text to actuall be in the top right -->
+    <div>
+        <a class = "current-page">Home</a>
+        <a class = "nav-button" href = "pricing">Pricing</a>
+        <a class = "nav-button" href = "contact">Contact</a>
     </div>
-</div>
+</header>
 
-<main class="home-page">
+<main>
+    <section class="title">
+        <h1>Keep It<br><b id = "cool">Cool</b></h1>
+        <p>Food grade crushed and cubed ice,
+            reliable frozen storage,
+            secure storage
+            and fast delivery.
+            Keeping your business and events chilled.</p>
 
-    <section class="hero">
-
-        <h1 class="hero-title">
-            Billericay Chill
-        </h1>
-
-        <p class="hero-subtitle">
-            Supplying premium <b>cubed</b> and
-            <b>crushed ice</b>, as well as
-            reliable <b>frozen storage</b>
-            throughout Essex.
-        </p>
-
-        <div class="cta-row">
-
-            <a href="pricing/index.html"
-               class="cta-button primary">
-
-                View Pricing
-
-            </a>
-
-            <a href="contact/index.html"
-               class="cta-button">
-
-                Contact Us
-
-            </a>
-
+        <div class = "buttons">
+            <a href="pricing" id = "main-button">View Pricing</a>
+            <a href="contact">Contact Us</a>
         </div>
-
     </section>
 
+    <section class="grid">
+        <a href="pricing">
+            <div class="card">
+                <div class = "card-image">
+                    <img src="images/pricing.svg" alt="price">
+                </div>
 
-    <section class="feature-grid">
+                <div class="card-text">
+                    <h2>Price</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl eu nunc. </p>
+                </div>
+            </div>
+        </a>
 
-        <div class="pricing-card">
+        <a href="contact">
+            <div class="card">
+                <div class = "card-image">
+                    <img src="images/contact.svg" alt="contact">
+                </div>
+                <div class="card-text">
+                    <h2>Contact</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl eu nunc. </p>
+                </div>
+            </div>
+        </a>
 
-            <div class="badge">ICE</div>
-
-            <h2>Fresh Ice</h2>
-
-            <p>
-                Cubed and crushed ice available
-                for businesses, events and
-                bulk orders.
-            </p>
-
-        </div>
-
-
-        <div class="pricing-card">
-
-            <div class="badge">STORAGE</div>
-
-            <h2>Frozen Storage</h2>
-
-            <p>
-                Flexible cold storage from
-                as little as £4 per day.
-            </p>
-
-        </div>
-
-
-        <div class="pricing-card">
-
-            <div class="badge">DELIVERY</div>
-
-            <h2>Local Delivery</h2>
-
-            <p>
-                Delivery available within a 6 mile radius. With select availability further.
-            </p>
-
-        </div>
-
+        <a href="">
+            <div class="card">
+                <div class = "card-image">
+                    <img src="images/about.svg" alt="about">
+                </div>
+                <div class="card-text">
+                    <h2>About</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec euismod, nisl eget aliquam tincidunt, nunc nisl aliquam nisl, eget aliquam nisl nisl eu nunc. </p>
+                </div>
+            </div>
+        </a>
     </section>
-
 </main>
 
-<footer class="footer">
-    <div class="footer-left">
-        <h3>Contact</h3>
-        <p class="sub-footer">📞 +44 07889 740335</p>
-        <a class="sub-footer" href = "mailto:billericaychillstorageandice@gmail.com">✉️ billericaychillstorageandice@gmail.com</a>
-    </div>
+<footer>
+    <div class = "footer-info">
+        <a href = "" class="logo">
+            <img src="images/logo.png" alt="logo">
+            <p class= "billericay-logo-text">Billericay <br><b class = "chill-logo-text">Chill</b></p>
+        </a>
 
-    <div class="footer-right">
-        <h3>Address</h3>
-        <p class="sub-footer">Unit 4e Oaklands Farm Est CM4 9RH</p>
-        <p class="sub-footer">Goatsmoor Ln, Stock, Ingatestone, United Kingdom</p>
+        <p>📞 +44 07889 740335</p>
+        <p>
+            billericaychillstorageandice@gmail.com
+        </p>
+        <p>📍 Unit 4e Oaklands Farm Est CM4 9RH</p>
     </div>
 </footer>
 

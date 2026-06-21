@@ -1,17 +1,19 @@
-const YOUR_LAT = 51.645424;
-const YOUR_LNG = 0.449835;
+const BILLERICAY_CHILL_LATITUDE = 51.645424;
+const BILLERICAY_CHILL_LONGITUDE = 0.449835;
 const MAX_DISTANCE_MILES = 6;
 
+// Math.toRad doesnt exist...?
 function toRad(v) {
     return v * Math.PI / 180;
 }
 
 // https://en.wikipedia.org/wiki/Haversine_formula
-function getDistanceMiles(lat1, lon1, lat2, lon2) {
-    const R = 3958.8; // Earth radius in miles
+const EARTH_DIAMETER_MILES = 7917.6;
+function haversineDistance(lon1, lat1, lon2, lat2) {
     const dLat = toRad(lat2 - lat1);
     const dLon = toRad(lon2 - lon1);
 
+    // https://www.movable-type.co.uk/scripts/latlong.html this example just calls the variable "a"
     const a =
         Math.sin(dLat / 2) * Math.sin(dLat / 2) +
         Math.cos(toRad(lat1)) *
@@ -19,10 +21,10 @@ function getDistanceMiles(lat1, lon1, lat2, lon2) {
         Math.sin(dLon / 2) *
         Math.sin(dLon / 2);
 
-    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    return R * c;
+    return EARTH_DIAMETER_MILES * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 }
 
+// async, fancy stuff.
 async function checkPostcode() {
     const postcode = document.getElementById("postcode").value.trim();
     const result = document.getElementById("result");
@@ -35,20 +37,21 @@ async function checkPostcode() {
     result.innerText = "Calculating distance";
 
     try {
-        // thank goodness there is an API that doesnt require a key for this
-        const res = await fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(postcode)}`);
+        // thank goodness there is an API that doesnt require a key for this https://postcodes.io/endpoints/
+        // my sister said it doesnt rate limit, i hope that's true
+        const res = await fetch(`https://api.postcodes.io/${encodeURIComponent(postcode)}`);
 
         const data = await res.json();
 
-        if (!data.length) {
+        if (data.status !== 200) {
             result.innerText = "Postcode not found.";
             return;
         }
 
-        const lat = parseFloat(data[0].lat);
-        const lng = parseFloat(data[0].lon);
+        const POSTCODE_LONGITUDE = parseFloat(data[0].longitude);
+        const POSTCODE_LATITUDE = parseFloat(data[0].latitude);
 
-        const distance = getDistanceMiles(YOUR_LAT, YOUR_LNG, lat, lng);
+        const distance = haversineDistance(BILLERICAY_CHILL_LONGITUDE, BILLERICAY_CHILL_LATITUDE, POSTCODE_LONGITUDE, POSTCODE_LATITUDE);
 
         if (distance <= MAX_DISTANCE_MILES) {
             result.innerText = `Inside delivery area (${distance.toFixed(2)} miles)`;

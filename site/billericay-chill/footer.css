@@ -1,0 +1,44 @@
+footer {
+    background-color: #082c68;
+    color: white;
+    padding: 1vh 0;
+}
+footer .billericay-logo-text {
+    color: white;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-size: 1.45vw;
+    padding-right: 2vw;
+    padding-bottom: 1vh;
+    line-height: 0;
+
+    overflow-x: hidden;
+}
+
+.footer-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5vw;
+    margin: 0;
+}
+.footer-image {
+    height: 2vw;
+    padding: 1vh 5px;
+}
+@media (max-width: 1000px) {
+    footer .logo {
+        display: none;
+    }
+    .footer-info {
+        font-size: 3vw;
+        flex-direction: column;
+    }
+    .footer-info img {
+        height: 3vw;
+    }
+}

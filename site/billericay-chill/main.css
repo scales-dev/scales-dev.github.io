@@ -6,57 +6,6 @@ a {
     text-decoration: none;
 }
 
-header {
-    display: flex;
-    align-items: center;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    padding: 0 1vw;
-    line-height: 0.95;
-    font-weight: bold;
-}
-.logo img {
-    height: 10vh;
-}
-.billericay-logo-text {
-    color: #082c68;
-    font-size: 3.3vh;
-    margin: 1vh 0.5vw;
-}
-.chill-logo-text {
-    color: #00b4f6;
-    font-family: serif;
-    font-size: 6.5vh;
-}
-
-/* div is NEEDED for text to be in the top right, :pensive: */
-header div {
-    margin-left: auto;
-}
-header .nav-button, header .current-page {
-    font-size: 2.5vh;
-    font-weight: bold;
-    color: #082c68;
-    padding-inline: 2vw;
-    white-space: nowrap;
-}
-header .nav-button:hover {
-    color: #000000;
-}
-@media (max-width: 515px) {
-    header div {
-        display: none;
-    }
-}
-
-header .current-page {
-    text-decoration: underline;
-    text-decoration-thickness: 0.2vh;
-    text-underline-offset: 2vh;
-}
-
 /* title text is the text w the background image */
 main .title {
     background-color: #c5ddf4;
@@ -68,10 +17,10 @@ main .title {
     padding: 10vh 10vw;
     color: black;
 }
-@media (max-width: 369px) {
+@media (max-width: 1000px) {
     main .title {
-        background-position: 60% 40vh;
-        padding-bottom: 25vh;
+        background-position: 60% 30vh;
+        padding-bottom: 30vh;
     }
 }
 
@@ -83,7 +32,7 @@ main .title h1 {
     margin: 0;
     line-height: 0.9;
 }
-main #cool {
+main #cool-title-text {
     color: #00b4f6;
 }
 
@@ -163,31 +112,4 @@ main .card p {
     color: black;
     font-size: 2vh;
     margin: 0;
-}
-
-footer {
-    background-color: #082c68;
-    color: white;
-    padding: 1vh 0;
-}
-footer .billericay-logo-text {
-    color: white;
-}
-
-.footer-info {
-    font-size: 1.45vw;
-    display: flex;
-    justify-content: space-between;
-    padding: 1vh 2vw;
-    overflow-x: hidden;
-    align-items: center;
-    line-height: 0;
-}
-@media (max-width: 1000px) {
-    footer .logo {
-        display: none;
-    }
-    .footer-info {
-        flex-direction: column;
-    }
 }

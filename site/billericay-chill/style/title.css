@@ -1,0 +1,64 @@
+/* title text is the text w the background image on the main page */
+main .title {
+    background-color: #c5ddf4;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+
+    padding: 10vh 10vw;
+    color: black;
+}
+@media (max-width: 1000px) {
+    main .title {
+        background-position: 60% 30vh;
+        padding-bottom: 30vh;
+    }
+}
+
+main .title h1 {
+    font-size: 10vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #082c68;
+    margin: 0;
+    line-height: 0.9;
+}
+main #cool-title-text {
+    color: #00b4f6;
+}
+
+main .title p {
+    font-size: 2.5vh;
+    width: min(50vh, 80vw);
+}
+
+main .title .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vh 2vw;
+}
+main .title .buttons a:hover {
+    transform: translate(0, -0.5vh);
+    box-shadow: 0.5vh 0.5vh 1vh rgba(8, 44, 104, 1);
+}
+main .title .buttons a {
+    transition: 0.2s;
+
+    display: inline-block;
+    flex-wrap: wrap;
+
+    font-weight: bold;
+    font-size: 2vh;
+
+    color: #082c68;
+    background-color: white;
+
+    padding: 2vh 3vh;
+    border-radius: 1vh;
+    border: 0.3vh solid #082c68;
+}
+main .title #main-button {
+    background-color: #082c68;
+    color: white;
+}

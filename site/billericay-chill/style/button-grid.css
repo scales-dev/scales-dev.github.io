@@ -1,0 +1,54 @@
+/* button grid time! */
+main .grid {
+    background-color: #f4f9fd;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    gap: 4vw;
+    padding: 5vw;
+}
+@media (max-width: 1000px) {
+    main .grid {
+        grid-auto-flow: row;
+    }
+}
+
+main .card {
+    transition: 0.2s;
+
+    display: flex;
+    background-color: white;
+    padding: 2vw;
+    border-radius: 1vh;
+    box-shadow: 0 0 1vh 0.5vh rgba(0, 0, 0, 0.25);
+}
+main .card:hover {
+    transform: translate(0, -0.5vh);
+    box-shadow: 0 0 2vh rgba(8, 44, 104, 1);
+}
+/* card image is a seperate thing so i can filter images seperate from the background */
+main .card-image {
+    padding: 1vh;
+    background-color: #e9f3fc;
+    border-radius: 1vh;
+
+    height: 10vh;
+}
+main .card img {
+    height: 10vh;
+}
+main .card-text {
+    margin: 0 1vh;
+    display: flex;
+    flex-direction: column;
+}
+main .card h2 {
+    color: #082c68;
+    font-size: 3vh;
+    margin: 0;
+}
+main .card p {
+    color: black;
+    font-size: 2vh;
+    margin: 0;
+}

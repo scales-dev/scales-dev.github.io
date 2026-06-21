@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- todo: add icon and embed -->
     <meta charset="UTF-8">
     <title>Billericay Chill - Pricing</title>
-    <link rel="stylesheet" href="../style.css">
+
+    <link rel="icon" href="../images/logo.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://billericaychill.co.uk/">
+    <meta property="og:title" content="Billericay Chill">
+    <meta property="og:description" content="Premium Ice & Frozen Storage, Essex" />
+    <meta property="og:image" content="../images/logo.png">
+
+    <link rel="stylesheet" href="../style/base.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/footer.css">
+
     <script src="index.js"></script>
 </head>
 <body>
 
-<div id="navbar">
-    <a href="../contact/index.html">Contact</a>
-    <a href="../pricing/index.html">Pricing</a>
-    <a href="../index.html">Home</a>
-</div>
+<header>
+    <a href = "" class="logo">
+        <img src="../images/logo.png" alt="logo">
+        <p class= "billericay-logo-text">Billericay <br><b class = "chill-logo-text">Chill</b></p>
+    </a>
+
+    <!-- div is supposedly magical and allows the text to actuall be in the top right -->
+    <div>
+        <a class = "nav-button" href = "../">Home</a>
+        <a class = "current-page" href = "">Pricing</a>
+        <a class = "nav-button" href = "../contact">Contact</a>
+    </div>
+</header>
 
 <div class="pricing-page">
 
@@ -59,7 +77,7 @@
             <h3>Check Distance</h3>
 
             <div class="postcode-input">
-                <input id="postcode" type="text" placeholder="Enter postcode (e.g. CM4 9RH)">
+                <label for="postcode"></label><input id="postcode" type="text" placeholder="Enter postcode (e.g. CM4 9RH)">
                 <button onclick="checkPostcode()">Check</button>
             </div>
 
@@ -73,19 +91,25 @@
     </div>
 </div>
 
-<footer class="footer">
-    <div class="footer-left">
-        <h3>Contact</h3>
-        <p class="sub-footer">📞 +44 07889 740335</p>
-        <a class="sub-footer" href="mailto:billericaychillstorageandice@gmail.com">
-            ✉️ billericaychillstorageandice@gmail.com
+<footer>
+    <div class = "footer-info">
+        <a href = "" class="logo">
+            <img src="../images/logo.png" alt="logo">
+            <b class= "billericay-logo-text">Billericay <br><b class = "chill-logo-text">Chill</b></b>
         </a>
-    </div>
 
-    <div class="footer-right">
-        <h3>Address</h3>
-        <p class="sub-footer">Unit 4e Oaklands Farm Est CM4 9RH</p>
-        <p class="sub-footer">Goatsmoor Ln, Stock, Ingatestone, United Kingdom</p>
+        <p>
+            <img src="../images/phone.svg" alt="phone" class = "footer-image">
+            +44 07889 740335
+        </p>
+        <p>
+            <img src="../images/email.svg" alt="email" class = "footer-image">
+            billericaychillstorageandice@gmail.com
+        </p>
+        <p>
+            <img src="../images/location.svg" alt="location" class = "footer-image">
+            Unit 4e Oaklands Farm Est CM4 9RH
+        </p>
     </div>
 </footer>
 

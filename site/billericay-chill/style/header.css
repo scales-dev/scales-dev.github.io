@@ -28,14 +28,17 @@ header div {
     margin-left: auto;
 }
 header .nav-button, header .current-page {
+    display: inline-block;
+    transition: 0.2s;
+
     font-size: 2.5vh;
     font-weight: bold;
     color: #082c68;
     padding-inline: 2vw;
     white-space: nowrap;
 }
-header .nav-button:hover {
-    color: #000000;
+header .nav-button:hover, header .current-page {
+    transform: scale3d(1.1, 1.1, 1.1);
 }
 @media (max-width: 1000px) {
     header div {
